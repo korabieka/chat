@@ -19,17 +19,22 @@ function getContent(timestamp)
             type: 'GET',
             url: window.location.origin+'/getLatestMsg?data='+queryString,
             success: function(data){
-                $("#chat").empty();
-                var data = JSON.parse(data);
-                for(i=0;i<data.chat.length;i++){
-                    $("#chat").append(data.chat[i]+'\n');    
-                }
+                appendContent(data);
             },
             complete: function() {
                 window.setTimeout(getContent, 2000);
             }
         }
     );
+}
+
+function appendContent(data)
+{
+    $("#chat").empty();
+    var data = JSON.parse(data);
+    for(i=0;i<data.chat.length;i++){
+        $("#chat").append(data.chat[i]+'\n');    
+    }
 }
 
 // initialize jQuery
@@ -50,13 +55,7 @@ $(function() {
                     type: 'GET',
                     url: window.location.origin+'/sendMsg?data='+data,
                     success: function(data){
-                        $("#chat").empty();
-                        var messages = JSON.parse(data);
-                        for(i=0;i<messages.length;i++){
-                            $("#chat").append(messages[i]+'\n');    
-                        }
-                    },
-                    error: function(error){
+                        appendContent(data);
                     }
                 }
             );
@@ -72,14 +71,7 @@ $(function() {
                     type: 'GET',
                     url: window.location.origin+'/getChat?data='+data,
                     success: function(data){
-                        $("#chat").empty();
-                        var messages = JSON.parse(data);
-                        for(i=0;i<messages.length;i++){
-                            $("#chat").append(messages[i]+'\n');    
-                        }
-                    },
-                    error: function(error){
-                        console.log(error);
+                        appendContent(data);
                     }
                 }
             );

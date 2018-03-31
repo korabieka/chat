@@ -4,6 +4,14 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
+/**
+* This is our user request class
+* and it's used for validating the username
+*
+* @author     Hussien Ashour
+* @version    1
+* ...
+*/
 class UserRequest extends FormRequest
 {
     /**

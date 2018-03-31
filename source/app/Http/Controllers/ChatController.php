@@ -2,10 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Services\UserService;
-use App\Http\Services\ChatService;
+use App\Http\Services\{UserService,ChatService};
 use Illuminate\Http\Request;
 
+/**
+* This is our chat controller class
+*
+* @author     Hussien Ashour
+* @version    1
+* ...
+*/
 class ChatController extends Controller
 {
     private $chatService;
@@ -15,6 +21,10 @@ class ChatController extends Controller
     	$this->chatService = $chatService;
     }
 
+    /**
+    * This function for saving the message
+    * @param Request $request
+    */
     public function saveMessage(Request $request)
     {
         $chat = $this->chatService->saveMessage($request->data);
@@ -22,6 +32,10 @@ class ChatController extends Controller
         echo json_encode($chat);
     }
 
+    /**
+    * This function for getting chat between two users
+    * @param Request $request
+    */
     public function getChat(Request $request)
     {
         $chat = $this->chatService->getChat($request->data);
@@ -29,6 +43,10 @@ class ChatController extends Controller
         echo json_encode($chat);
     }
 
+    /**
+    * This function for getting the last message between two users
+    * @param Request $request
+    */
     public function getLatestMsg(Request $request)
     {
         $data = ChatService::getLatestMsg($request->data);
