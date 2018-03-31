@@ -34,4 +34,4 @@ Assume that you don't have php7 and nginx on your machine
 
 # Codeclimate Badge for maintainability
 
-[![Maintainability](https://api.codeclimate.com/v1/badges/972e14cd6011c6f0097b/maintainability)](https://codeclimate.com/github/korabieka/TajawalTask/maintainability)
+[![Maintainability](https://api.codeclimate.com/v1/badges/9bb021c3f16349a0c72f/maintainability)](https://codeclimate.com/github/korabieka/chat/maintainability)
