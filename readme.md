@@ -1,14 +1,14 @@
 # Requirements
 
-Assume that you don't have php7,sqlite and nginx on your machine
+Assume that you don't have php7 and nginx on your machine
 
-1- install docker for your OS .
+1- Install docker and docker compose for your OS .
 
-2- install composer .
+2- Install composer .
 
 # Install instructions
  
-1- run the following commands for docker `cd docker` then `sudo docker-compose up`
+1- Run the following commands for docker `cd docker` then `sudo docker-compose up`
 
 2- `sudo docker ps` to check if our images are up or not
 
@@ -16,13 +16,17 @@ Assume that you don't have php7,sqlite and nginx on your machine
 
 `docker exec -it docker_php7_fpm_1 /bin/bash`
 
-4- run `composer install`
+4- Run `composer install`
 
-5- copy the .env.example file and rename the copied one to .env
+5- Copy the .env.example file and rename the copied one to .env
 
-6- run `php artisan key:generate`
+6- Run `php artisan key:generate`
 
-5- open the following link : `http://localhost:8081` (it will start the chat application)
+7- Run `php artisan migrate`
+
+8- Open the following link : `http://localhost:8081` (it will start the chat application)
+
+9- Don't forget to test from different browsers.
 
 # Travis Badge
 

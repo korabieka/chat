@@ -44,13 +44,6 @@ services:
         ports:
             - 8081:80
             - 9091:9090
-    sqlite:
-        command: socat TCP-L:12345,fork,reuseaddr EXEC:'sqlite3 /opt/sqlite/db',pty
-        build: ./microservices/battle/sqlite/
-        volumes:
-          - /tmp/sqlitedbs/test:/opt/sqlite/db
-        ports:
-          - 12346:12346
     ##
     # Source containers
     ##
