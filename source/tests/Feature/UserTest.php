@@ -43,13 +43,4 @@ class UserTest extends TestCase
     	$users = $this->userService->getUsers();
 		$this->assertNotNull($users);
     }
-
-    public function testGetUser()
-    {
-        $user = factory(User::class)->create();
-
-        $user = $this->userService->getUser($user->id);
-
-        $this->assertNotNull($user);
-    }
 }
