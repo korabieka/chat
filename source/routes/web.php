@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::post('chat','UserController@mainChat');
 Route::get('chatbox/{userId}','UserController@chatbox')->name('chatbox');
-Route::get('sendMsg','ChatController@saveMessage');
-Route::get('getChat','ChatController@getChat');
-Route::get('getLatestMsg','ChatController@getLatestMsg');
+Route::post('sendMsg','ChatController@saveMessage');
+Route::post('getChat','ChatController@getChat');
+Route::post('getLatestMsg','ChatController@getLatestMsg');
 Route::get('logout','UserController@logout');

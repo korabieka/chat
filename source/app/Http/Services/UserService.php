@@ -80,6 +80,5 @@ class UserService
 	{
 		$this->userRepository->deleteUser($userId);
 	}
-
 }
 	

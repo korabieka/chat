@@ -35,7 +35,7 @@ class ChatService
 
 		$chat = ChatService::buildChatMessagesArray($chat);
 
-		return $chat;
+		return json_encode(['chat' => $chat]);
 	}
 
     /**
@@ -65,7 +65,7 @@ class ChatService
 
 		$chat = ChatService::buildChatMessagesArray($chat);
 
-		return $chat;
+		return json_encode(['chat'=>$chat]);
 	}
 
     /**

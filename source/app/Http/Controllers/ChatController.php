@@ -29,7 +29,7 @@ class ChatController extends Controller
     {
         $chat = $this->chatService->saveMessage($request->data);
 
-        echo json_encode($chat);
+        echo $chat;
     }
 
     /**
@@ -40,7 +40,7 @@ class ChatController extends Controller
     {
         $chat = $this->chatService->getChat($request->data);
 
-        echo json_encode($chat);
+        echo $chat;
     }
 
     /**
@@ -49,7 +49,7 @@ class ChatController extends Controller
     */
     public function getLatestMsg(Request $request)
     {
-        $data = ChatService::getLatestMsg($request->data);
+        $data = ChatService::getLatestMsg($request->queryString);
 
         echo $data;
     }

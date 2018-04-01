@@ -14,7 +14,7 @@ Assume that you don't have php7 and nginx on your machine
 
 3- Open docker container
 
-`docker exec -it docker_php7_fpm_1 /bin/bash`
+`sudo docker exec -it docker_php7_fpm_1 /bin/bash`
 
 4- Run `composer install`
 
@@ -26,11 +26,17 @@ Assume that you don't have php7 and nginx on your machine
 
 8- Open the following link : `http://localhost:8081` (it will start the chat application)
 
-9- Don't forget to test from different browsers.
+9- Don't forget to test chatting between users from different browsers.
 
-# Travis Badge
+# Test Cases
 
-[![Build Status](https://travis-ci.org/korabieka/TajawalTask.svg?branch=master)](https://travis-ci.org/korabieka/TajawalTask)
+1- Open docker container 
+
+`sudo docker exec -it docker_php7_fpm_1 /bin/bash`
+
+2- Run test cases .
+
+`./vendor/phpunit/phpunit/phpunit`
 
 # Codeclimate Badge for maintainability
 
